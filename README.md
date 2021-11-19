@@ -1,5 +1,5 @@
 # JrChat
-![GitHub issues](https://img.shields.io/github/issues/ItzJerry317/JrChat)   
+![GitHub issues](https://img.shields.io/github/issues/ItzJerry317/JrChat) ![GitHub package.json version](https://img.shields.io/github/package-json/v/itzjerry317/jrchat)  
 **a chat template.**  
 Including two people doing this repositry.  
 We are students, so the update will be a little slow.  
