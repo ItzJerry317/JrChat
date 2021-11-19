@@ -1,0 +1,19 @@
+{
+  "name": "jrchat",
+  "version": "1.0.0",
+  "description": "a chat template",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItzJerry317/JrChat.git"
+  },
+  "author": "ItzJerry and bcmraycrazy-coder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItzJerry317/JrChat/issues"
+  },
+  "homepage": "https://github.com/ItzJerry317/JrChat#readme"
+}
