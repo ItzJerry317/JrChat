@@ -44,7 +44,7 @@ http.createServer(function (req, res) {
             res.end("<h1>404 Not Found</h1>");
         }
     });
-}).listen(80);
+}).listen(80);  //<--if you want to change port, here.
 console.log("Server running at localhost");
 
 //code in csdn https://blog.csdn.net/yy211zhu/article/details/53543208
