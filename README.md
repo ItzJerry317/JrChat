@@ -4,6 +4,8 @@
 Including two people doing this repositry.  
 We are students, so the update will be a little slow.  
 *Junior high school lol we are only 12yrs*  
+local language: Chinese  
+*we will add more languages soon lol*  
 # How to run?
 Use npm to run this chat template.  
 `npm run test`  
