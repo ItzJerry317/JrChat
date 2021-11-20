@@ -1,9 +1,6 @@
 h1 {
     text-align: center;
 }
-p {
-    font-size: 60px;
-}
 #buttons {
     position: relative;
     width: 100%;
@@ -18,4 +15,15 @@ p {
 h2 {
     position: absolute;
     top: 15rem;
+}
+#description {
+    position: absolute;
+    top: 23rem;
+    font-size: 20px;
+}
+footer {
+    position: absolute;
+    top: 93%;
+    left: 45%;
+    text-align: center;
 }
