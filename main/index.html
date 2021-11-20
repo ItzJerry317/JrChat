@@ -9,6 +9,11 @@
         <title>JrChat</title>
     </head>
     <body class="mdui-theme-layout-dark">
+        <script>
+            function rickroll() {
+                window.alert('Never gonna give you up, never gonna let you down~');
+            }
+        </script>
         <div class="mdui-toolbar mdui-color-grey-900">
             <a href="/main/index.html" id="title" class="mdui-typo-headline mdui-hidden-xs">JrChat</a>
             <div class="mdui-toolbar-spacer"></div>
@@ -19,6 +24,7 @@
         </div>
         <div id="chat">
             <p id="nochat">你并没有选中聊天</p>
+            <p id="easteregg" onclick="rickroll()">太无聊了？点我！</p>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
     </body>
