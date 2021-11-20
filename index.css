@@ -15,3 +15,7 @@ p {
     top: 50%;
     transform: translate(-50%);
 }
+h2 {
+    position: absolute;
+    top: 15rem;
+}

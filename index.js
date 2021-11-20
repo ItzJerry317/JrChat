@@ -16,24 +16,31 @@ http.createServer(function (req, res) {
             switch(path.extname(pathname)){
                 case ".html":
                     res.writeHead(200, {"Content-Type": "text/html"});
+                    console.log("GET HTML 200");
                     break;
                 case ".js":
                     res.writeHead(200, {"Content-Type": "text/javascript"});
+                    console.log("GET JS 200");
                     break;
                 case ".css":
                     res.writeHead(200, {"Content-Type": "text/css"});
+                    console.log("GET css 200");
                     break;
                 case ".gif":
                     res.writeHead(200, {"Content-Type": "image/gif"});
+                    console.log("GET gif 200");
                     break;
                 case ".jpg":
                     res.writeHead(200, {"Content-Type": "image/jpeg"});
+                    console.log("GET jpg 200");
                     break;
                 case ".png":
                     res.writeHead(200, {"Content-Type": "image/png"});
+                    console.log("GET png 200");
                     break;
                 default:
                     res.writeHead(200, {"Content-Type": "application/octet-stream"});
+                    console.log("200");
             }
 
             fs.readFile(pathname,function (err,data){
@@ -41,7 +48,8 @@ http.createServer(function (req, res) {
             });
         } else {
             res.writeHead(404, {"Content-Type": "text/html"});
-            res.end("<h1>404 Not Found</h1>");
+            console.log("404 not found");
+            res.end("<h1>404 Not Found</h1><br><a href='/'>Go back</a>");
         }
     });
 }).listen(80);  //<--if you want to change port, here.
