@@ -20,10 +20,46 @@
             </a>
         </div>
         <div id="friends">
-            <p id="nofriends">你还没有任何好友呢</p>
+            <script>
+                var realjson;
+                function loadFriends() {
+                    var url = "/main/json/Friends.json";
+                    var request = new XMLHttpRequest();
+                    request.open("get", url);
+                    request.send(null);
+                    request.onload = function(){
+                        if (request.status == 200) {
+                            json = JSON.parse(request.responseText);
+                            console.log(json);
+                            for (var i = 1; i <= json.Friends.length; i++){
+                                document.getElementById("chat" + i).innerHTML = json.Friends[i-1].name;
+                                var img = document.getElementById("img" + i);
+                                img.src = json.Friends[i-1].headavatar;
+                            }
+                        }
+                        else {
+                            document.getElementById('Friendstip').innerHTML = "加载失败，请重试";
+                        }
+                    }
+                }
+                loadFriends();
+            </script>
+            <p id="Friendstip"></p>
         </div>
         <div id="chat">
-            <p id="nochat">你并没有选中聊天</p>
+            <p id="chat1"></p>
+            <img id="img1" src="" />
+            <p id="chat2"></p>
+            <img id="img2" src="" />
+            <p id="chat3"></p>
+            <img id="img3" src="" />
+            <p id="chat4"></p>
+            <img id="img4" src="" />
+            <p id="chat5"></p>
+            <img id="img5" src="" />
+            <p id="chat6"></p>
+            <img id="img6" src="" />
+            <p id="nochat"></p>
             <p id="easteregg" onclick="rickroll()">太无聊了？点我！</p>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
