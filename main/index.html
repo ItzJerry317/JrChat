@@ -31,6 +31,9 @@
                         if (request.status == 200) {
                             json = JSON.parse(request.responseText);
                             console.log(json);
+                            if (json.Friends.length == 0) {
+                                document.getElementById("nochat").innerHTML = "你还没有好友呢……";
+                            }
                             for (var i = 1; i <= json.Friends.length; i++){
                                 document.getElementById("chat" + i).innerHTML = json.Friends[i-1].name;
                                 var img = document.getElementById("img" + i);

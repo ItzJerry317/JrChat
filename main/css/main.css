@@ -71,4 +71,45 @@
     height: 5%;
     top: 10%;
     left: 1%;
+    border-radius:114514px;
+}
+
+#img2 {
+    position: absolute;
+    height: 5%;
+    top: 20%;
+    left: 1%;
+    border-radius:114514px;
+}
+
+#img3 {
+    position: absolute;
+    height: 5%;
+    top: 30%;
+    left: 1%;
+    border-radius:114514px;
+}
+
+#img4 {
+    position: absolute;
+    height: 5%;
+    top: 40%;
+    left: 1%;
+    border-radius:114514px;
+}
+
+#img5 {
+    position: absolute;
+    height: 5%;
+    top: 50%;
+    left: 1%;
+    border-radius:114514px;
+}
+
+#img6 {
+    position: absolute;
+    height: 5%;
+    top: 60%;
+    left: 1%;
+    border-radius:114514px;
 }
