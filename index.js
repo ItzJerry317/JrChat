@@ -1,16 +1,18 @@
+const { escape } = require("querystring");
 var url  = require("url"),
     fs=require("fs"),
     http=require("http"),
     path = require("path");
 http.createServer(function (req, res) {
     var pathname=__dirname+url.parse(req.url).pathname;
+    pathname = escape(pathname);
     if (path.extname(pathname)=="") {
         pathname+="/";
     }
     if (pathname.charAt(pathname.length-1)=="/"){
         pathname+="index.html";
     }
-
+    pathname = unescape(pathname);
     fs.exists(pathname,function(exists){
         if(exists){
             switch(path.extname(pathname)){
@@ -42,13 +44,15 @@ http.createServer(function (req, res) {
                     res.writeHead(200, {"Content-Type": "application/octet-stream"});
                     console.log("200");
             }
-
             fs.readFile(pathname,function (err,data){
+                pathname = escape(pathname);
+                console.log(pathname);
                 res.end(data);
             });
         } else {
             res.writeHead(404, {"Content-Type": "text/html"});
             console.log("404 not found");
+            console.log(pathname);
             res.end("<h1>404 Not Found</h1><br><a href='/'>Go back</a>");
         }
     });
