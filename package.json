@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ItzJerry317/JrChat/issues"
   },
-  "homepage": "https://github.com/ItzJerry317/JrChat#readme"
+  "homepage": "https://github.com/ItzJerry317/JrChat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.4.0"
+  }
 }

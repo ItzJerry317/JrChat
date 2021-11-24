@@ -1,6 +1,12 @@
 {
     "Friends": [
         {"name": "Steve", "headavatar": "avatar/3.png"},
-        {"name": "Alex", "headavatar": "pics/JrChat.png"}
+        {"name": "Alex", "headavatar": "pics/JrChat.png"},
+        {"name": "Steve", "headavatar": "avatar/3.png"},
+        {"name": "Alex", "headavatar": "pics/JrChat.png"},
+        {"name": "Steve", "headavatar": "avatar/3.png"},
+        {"name": "Alex", "headavatar": "pics/JrChat.png"},
+        {"name": "e", "headavatar": "avatar/3.png"},
+        {"name": "ee", "headavatar": "pics/JrChat.png"}
     ]
 }

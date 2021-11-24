@@ -8,7 +8,8 @@
     height: 100%;
     border-color: rgb(32, 31, 31);
     border: 2px none;
-    padding-top: 91rem;
+    /* padding-top: 91rem; */
+    position: absolute;
     background: rgb(20, 20, 20);
 }
 
@@ -29,87 +30,50 @@
     top: 47%;
     left: 60%;
 }
+.user{
+    display:block;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.userName {
+    display:block;
+    /* position: absolute; */
+    /* top: 7%;
+    left: 1%; */
+}
+.userImg {
+    display:block;
+    /* position: absolute; */
+    height: 50px;
+    /* top: 10%;
+    left: 1%;  */
+    /* weight:5%; */
+    border-radius:100%;
+    margin:0px auto;
+    
+}
 
-#chat1 {
+#previous {
     position: absolute;
-    top: 7%;
+    top: 95%;
     left: 1%;
 }
 
-#chat2 {
+#next {
     position: absolute;
-    top: 17%;
-    left: 1%;
+    top: 95%;
+    left: 7%;
 }
 
-#chat3 {
+#page {
     position: absolute;
-    top: 27%;
-    left: 1%;
+    top: 95%;
+    left: 4%;
+    font-size: 20px;
 }
 
-#chat4 {
+#footer {
     position: absolute;
-    top: 37%;
-    left: 1%;
-}
-
-#chat5 {
-    position: absolute;
-    top: 47%;
-    left: 1%;
-}
-
-#chat6 {
-    position: absolute;
-    top: 57%;
-    left: 1%;
-}
-
-#img1 {
-    position: absolute;
-    height: 5%;
-    top: 10%;
-    left: 1%;
-    border-radius:114514px;
-}
-
-#img2 {
-    position: absolute;
-    height: 5%;
-    top: 20%;
-    left: 1%;
-    border-radius:114514px;
-}
-
-#img3 {
-    position: absolute;
-    height: 5%;
-    top: 30%;
-    left: 1%;
-    border-radius:114514px;
-}
-
-#img4 {
-    position: absolute;
-    height: 5%;
-    top: 40%;
-    left: 1%;
-    border-radius:114514px;
-}
-
-#img5 {
-    position: absolute;
-    height: 5%;
-    top: 50%;
-    left: 1%;
-    border-radius:114514px;
-}
-
-#img6 {
-    position: absolute;
-    height: 5%;
-    top: 60%;
-    left: 1%;
-    border-radius:114514px;
+    top: 90%;
+    font-size: 12px;
 }
