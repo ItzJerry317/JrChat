@@ -45,7 +45,7 @@ var realjson;
                     }
                 }
                 function next() {
-                    var url = "/main/json/Friends.json";
+                    var url = "/json/Friends.json";
                     var request = new XMLHttpRequest();
                     request.open("get", url);
                     request.send(null);

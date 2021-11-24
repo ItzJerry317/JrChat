@@ -77,3 +77,8 @@
     top: 90%;
     font-size: 12px;
 }
+
+#login {
+    color: white;
+    text-decoration: none;
+}

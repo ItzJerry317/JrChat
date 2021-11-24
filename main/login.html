@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="shortcut icon" href="/pics/JrChat.png" />
+        <link rel="stylesheet" href="/css/login.css" />
+        <meta charset="UTF-8" />
+        <title>JrChat</title>
+    </head>
+    <body class="mdui-theme-layout-dark">
+        <div class="mdui-toolbar mdui-color-grey-900">
+            <a href="/index.html" id="title" class="mdui-typo-headline mdui-hidden-xs">JrChat</a>
+            <div class="mdui-toolbar-spacer"></div>
+        </div>
+        <h1>登录/注册</h1>
+        <p id="logintitle">登录</p>
+        <script>
+            function verify() {
+                var url = "/json/userpwd.json";
+                var request = new XMLHttpRequest();
+                request.open("get", url);
+                request.send(null);
+                request.onload = function(){
+                if (request.status == 200) {
+                    json = JSON.parse(request.responseText);
+                }
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                var rightuser = "null";
+                password = md5(password);
+                for (var i = 1; i <= json.pwd.length; i++) {
+                    if (json.pwd[i-1].name == username) {
+                        if (json.pwd[i-1].pwd == password) {
+                            rightuser = json.pwd[i-1].name;
+                        }
+                    }
+                }
+                if (rightuser == "null") {
+                    document.getElementById("traceback").innerHTML = "密码错误或没有这个用户";
+                }
+                else {
+                    document.getElementById("traceback").innerHTML = "Hello, " + rightuser;
+                }
+            }
+        }
+        </script>
+        <div class="mdui-textfield">
+            <input id="username" class="mdui-textfield-input" type="text" placeholder="User Name"/>
+            <input id="password" class="mdui-textfield-input" type="password" placeholder="Password"/>
+        </div>
+        <!-- 正确用户名：test 密码：114514power -->
+        <h3 id="traceback">这里是登陆的返回值</h3>
+        <p>注册等bcmray做</p>
+        <button class="mdui-btn mdui-color-blue mdui-ripple" onclick="verify()">登录</button>
+        <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    </body>
+</html>
