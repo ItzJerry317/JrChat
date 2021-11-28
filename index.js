@@ -4,7 +4,7 @@ const { escape } = require("querystring");
 const express = require("express");
 const socketio = require("socket.io");
 
-const port = 8080; //if you want to change port, here
+const port = 80; //if you want to change port, here
 var app = express();
 
 require('./middle_mod.js').forEach(f=>{
@@ -12,7 +12,10 @@ require('./middle_mod.js').forEach(f=>{
 })
 
 // static file system
-app.use(express.static('./main'));
+// app.use(express.static('./main'));
+app.use(express.static('./main', {
+    extensions: ['html']
+}));
 
 app.listen(port,()=>{
     console.log("Server running at localhost");

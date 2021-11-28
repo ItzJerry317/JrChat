@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+        <script src="js/GetCookie.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous"/> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="shortcut icon" href="/pics/JrChat.png" />
@@ -11,12 +12,18 @@
     </head>
     <body class="mdui-theme-layout-dark">
         <div class="mdui-toolbar mdui-color-grey-900">
-            <a href="/index.html" id="title" class="mdui-typo-headline mdui-hidden-xs">JrChat</a>
+            <a href="/" id="title" class="mdui-typo-headline mdui-hidden-xs">JrChat</a>
             <div class="mdui-toolbar-spacer"></div>
         </div>
         <h1>登录/注册</h1>
         <p id="logintitle">登录</p>
         <script>
+            var LoggedInUser = getCookie("username");
+            function DetectLogIn() {
+                if (LoggedInUser != "") {
+                document.write("你已经登陆过了吶qwq<br><a href='/'>返回</a>")
+                }
+            }
             function verify() {
                 var url = "/json/userpwd.json";
                 var request = new XMLHttpRequest();
@@ -41,7 +48,9 @@
                     document.getElementById("traceback").innerHTML = "密码错误或没有这个用户";
                 }
                 else {
-                    document.getElementById("traceback").innerHTML = "Hello, " + rightuser;
+                    document.cookie = "username=" + rightuser;
+                    Cookieusername = getCookie("username");
+                    document.getElementById("traceback").innerHTML = "hello, " + Cookieusername + "!";
                 }
             }
         }
@@ -53,7 +62,12 @@
         <!-- 正确用户名：test 密码：114514power -->
         <h3 id="traceback">这里是登陆的返回值</h3>
         <p>注册等bcmray做</p>
-        <button class="mdui-btn mdui-color-blue mdui-ripple" onclick="verify()">登录</button>
+        <button type="submit" class="mdui-btn mdui-color-blue mdui-ripple" onclick="verify()">登录</button>
+        <script>
+            window.onload = function() {
+                DetectLogIn();
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>
         <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
     </body>

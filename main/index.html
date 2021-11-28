@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+        <script src="js/GetCookie.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous"/> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <link rel="shortcut icon" href="/pics/JrChat.png" />
@@ -14,12 +15,13 @@
             function rickroll() {
                 window.alert('Never gonna give you up, never gonna let you down~');
             }
+            var LoggedInUser = getCookie("username");
         </script>
         <div class="mdui-toolbar mdui-color-grey-900">
-            <a href="/index.html" id="title" class="mdui-typo-headline mdui-hidden-xs">JrChat</a>
+            <a href="/" id="title" class="mdui-typo-headline mdui-hidden-xs">JrChat</a>
             <div class="mdui-toolbar-spacer"></div>
-            <a href="/login.html" id="login" class="mdui-typo-hreadline mdui-hidden-xs">登录/注册</a>
-            </a>
+            <a href="/login" id="login" class="mdui-typo-hreadline mdui-hidden-xs">登录/注册</a>
+            <p id="username"></p>
         </div>
         <div id="friends">
             <div onclick="loadChat(1)" class="user mdui-ripple">
@@ -57,6 +59,16 @@
         </button>
         <p id="page"></p>
         <p id="footer">Made by ItzJerry & BcmRayCrazy<br>Using MDUI, express, socket.io</p>
+        <script>
+            function DetectLogin() {
+                if (LoggedInUser != "") {
+                    loginchange = document.getElementById("login");
+                    loginchange.style.display = "none";
+                    document.getElementById("username").innerHTML = "已登录为: " + LoggedInUser;
+                }
+            }
+            DetectLogin();
+        </script>
         <script src="/js/loadchat.js"></script>
         <script src="/js/loadFriend.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>

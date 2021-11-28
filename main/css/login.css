@@ -5,3 +5,8 @@ h1 {
 #logintitle {
     text-align: center;
 }
+
+#title {
+    text-decoration: none;
+    color: white;
+}
