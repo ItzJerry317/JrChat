@@ -7,5 +7,5 @@ Including two people doing this repositry.
 Use npm to run this chat template.  
 `npm run test`  
 then, you can access the template through `localhost` or `127.0.0.1`  
-If you want, you can change the port in index.js.
+If you want, you can change the port in index.js.  
 **This repo is currently archived. Latest version in [Here](https://github.com/aseum-studio/jrchat)**
